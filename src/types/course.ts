@@ -4,7 +4,7 @@ export interface CoursePricing {
   /** Preço "de vitrine" (tachado) — ex: 12x R$ 125,00 */
   originalInstallments: number;
   originalInstallmentValue: number;
-  /** Preço promocional no cartão — ex: 12x R$ 83,34 */
+  /** Preço promocional no cartão — ex: 12x R$ 89,00 */
   promoInstallments: number;
   promoInstallmentValue: number;
   /** Valor à vista no Pix */

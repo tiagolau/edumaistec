@@ -9,22 +9,22 @@ export const PRICING = {
   originalInstallments: 12,
 
   /** Preço promocional base (usado no cartão) */
-  promoInstallmentValue: 83.34,
+  promoInstallmentValue: 89.0,
   promoInstallments: 12,
 
   /** Condições por forma de pagamento */
   pix: {
-    total: 1000.08, // 12 × 83,34
+    total: 1068.0, // 12 × 89,00
     label: "à vista no Pix",
   },
   card: {
     installments: 12,
-    installmentValue: 83.34,
+    installmentValue: 89.0,
     label: "sem juros no cartão",
   },
   boleto: {
     installments: 18,
-    installmentValue: 83.34,
+    installmentValue: 89.0,
     label: "no boleto",
   },
 } as const;
@@ -62,7 +62,7 @@ export function calculateBundleMonthly(courseCount: number): number {
   return Math.round(total * 100) / 100;
 }
 
-/** Economia mensal vs preco cheio (todos a R$83,34) */
+/** Economia mensal vs preco cheio (todos a R$ 89,00) */
 export function calculateBundleSavings(courseCount: number): number {
   const fullPrice = courseCount * PRICING.card.installmentValue;
   const bundlePrice = calculateBundleMonthly(courseCount);

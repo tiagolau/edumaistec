@@ -158,7 +158,7 @@ export function ExitIntentPopup() {
                 </div>
                 <div className="flex items-center gap-2 text-sm text-white/80">
                   <CheckCircle2 className="h-4 w-4 shrink-0 text-success" />
-                  <span>A partir de 12x de R$ 83,34 sem juros</span>
+                  <span>A partir de 12x de R$ 89,00 sem juros</span>
                 </div>
               </div>
 
