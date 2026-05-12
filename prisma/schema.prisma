@@ -1,0 +1,206 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// ─── Cache do Catálogo Eduno ─────────────────────────────────
+
+model Course {
+  id             Int      @id // ID do curso na Eduno
+  slug           String   @unique
+  title          String
+  description    String   @default("")
+  image          String?
+  hasImage       Boolean  @default(false) @map("has_image")
+  tccRequired    String?  @map("tcc_required")
+  targetAudience String   @default("") @map("target_audience")
+  curriculum     String[] @default([])
+  workload       Int      @default(0)
+  durationMonths Int?     @map("duration_months")
+  categorySlug   String   @default("") @map("category_slug")
+  active         Boolean  @default(true)
+  syncedAt       DateTime @default(now()) @map("synced_at")
+
+  areaId      Int?     @map("area_id")
+  area        Area?    @relation(fields: [areaId], references: [id])
+
+  @@map("courses")
+}
+
+model Area {
+  id         Int      @id // ID da área na Eduno
+  title      String
+  slug       String   @unique
+  icon       String   @default("BookOpen")
+  courses    Course[]
+
+  @@map("areas")
+}
+
+// ─── Dados Locais (n\u00e3o provenientes da Eduno) ────────────────
+
+model Consultant {
+  id       String  @id @default(cuid())
+  name     String
+  role     String
+  phone    String
+  whatsapp String
+  email    String
+  cpf      String  @default("")
+  photo    String?
+  active   Boolean @default(true)
+  order    Int     @default(0)
+
+  @@map("consultants")
+}
+
+model FaqItem {
+  id       String @id @default(cuid())
+  question String
+  answer   String
+  order    Int    @default(0)
+
+  @@map("faq_items")
+}
+
+model Advantage {
+  id          String @id @default(cuid())
+  icon        String
+  title       String
+  description String
+  order       Int    @default(0)
+
+  @@map("advantages")
+}
+
+// ─── Log de sincroniza\u00e7\u00e3o ─────────────────────────────────
+
+model SyncLog {
+  id          String   @id @default(cuid())
+  type        String   // "courses" | "areas"
+  status      String   // "success" | "error"
+  message     String?
+  coursesCount Int?    @map("courses_count")
+  areasCount  Int?     @map("areas_count")
+  duration    Int?     // durac\u00e3o em ms
+  createdAt   DateTime @default(now()) @map("created_at")
+
+  @@map("sync_logs")
+}
+
+// ─── Gerador de Landing Pages ─────────────────────────────
+
+model LpWorkspace {
+  id        String   @id @default(cuid())
+  token     String   @unique
+  name      String
+  active    Boolean  @default(true)
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt       @map("updated_at")
+
+  landingPages LandingPage[]
+
+  @@map("lp_workspaces")
+}
+
+model LandingPage {
+  id          String   @id @default(cuid())
+  slug        String   @unique
+  title       String
+  bannerUrl   String?  @map("banner_url")
+  bannerPath  String?  @map("banner_path")
+  redirectUrl String   @map("redirect_url")
+  webhookUrl  String?  @map("webhook_url")
+  formFields  Json     @default("[]") @map("form_fields")
+  active      Boolean  @default(true)
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt       @map("updated_at")
+
+  workspaceId String      @map("workspace_id")
+  workspace   LpWorkspace @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+
+  submissions LpSubmission[]
+
+  @@index([workspaceId])
+  @@map("landing_pages")
+}
+
+model LpSubmission {
+  id        String   @id @default(cuid())
+  data      Json
+  ip        String?
+  userAgent String?  @map("user_agent")
+  createdAt DateTime @default(now()) @map("created_at")
+
+  landingPageId String      @map("landing_page_id")
+  landingPage   LandingPage @relation(fields: [landingPageId], references: [id], onDelete: Cascade)
+
+  @@index([landingPageId])
+  @@index([createdAt])
+  @@map("lp_submissions")
+}
+
+// ─── Captação de Lead (hero form) ───────────────────────
+
+model LeadSubmission {
+  id                 String   @id @default(cuid())
+  nome               String
+  email              String
+  ddd                String
+  telefone           String
+  areaTecnica        String   @map("area_tecnica")
+  estado             String?
+  cidade             String?
+  comoSoube          String?  @map("como_soube")
+  experienciaMinima  Boolean  @map("experiencia_minima")
+  ensinoMedio        Boolean  @map("ensino_medio")
+  empresaIndicou     String?  @map("empresa_indicou")
+  source             String   @default("hero")
+  webhookOk          Boolean? @map("webhook_ok")
+  ip                 String?
+  userAgent          String?  @map("user_agent")
+  utm                Json?
+  createdAt          DateTime @default(now()) @map("created_at")
+
+  @@index([createdAt])
+  @@index([email])
+  @@map("lead_submissions")
+}
+
+// ─── Rastreamento de Matrículas ─────────────────────────
+
+enum EnrollmentStatus {
+  STARTED
+  COURSE_SELECTED
+  PROPOSAL_GENERATED
+  @@map("enrollment_status")
+}
+
+model EnrollmentAttempt {
+  id              String           @id @default(cuid())
+  name            String
+  email           String
+  phone           String
+  status          EnrollmentStatus @default(STARTED)
+  mainCourseId    Int?             @map("main_course_id")
+  mainCourseTitle String?          @map("main_course_title")
+  extraCourseIds  Int[]            @default([]) @map("extra_course_ids")
+  totalCourses    Int              @default(0) @map("total_courses")
+  proposalLink    String?          @map("proposal_link")
+  recoveryNotified Boolean         @default(false) @map("recovery_notified")
+  recoveryAt      DateTime?        @map("recovery_at")
+  source          String?
+  ip              String?
+  userAgent       String?          @map("user_agent")
+  createdAt       DateTime         @default(now()) @map("created_at")
+  updatedAt       DateTime         @updatedAt @map("updated_at")
+
+  @@index([email])
+  @@index([status])
+  @@index([createdAt])
+  @@map("enrollment_attempts")
+}
