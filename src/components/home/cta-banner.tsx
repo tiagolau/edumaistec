@@ -19,7 +19,7 @@ export function CtaBanner() {
           {/* Urgency badge */}
           <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-white/15 px-5 py-2 text-sm font-semibold text-white">
             <Sparkles className="h-4 w-4" />
-            Matrículas abertas — Turmas de Março/2026
+            Matrículas abertas
           </div>
 
           <h2 className="text-2xl font-bold tracking-tight text-white sm:text-4xl lg:text-[2.75rem] lg:leading-tight">
@@ -34,7 +34,7 @@ export function CtaBanner() {
             </strong>
             . Mensalidade a partir de{" "}
             <strong className="text-white font-semibold">
-              12x de R$ 83,34
+              12x de R$ 89,00
             </strong>{" "}
             sem juros.
           </p>

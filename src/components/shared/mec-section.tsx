@@ -15,7 +15,7 @@ const benefits = [
   },
   {
     icon: TrendingUp,
-    text: "Certificado reconhecido em todo o território nacional",
+    text: "Diploma reconhecido em todo o território nacional",
   },
   {
     icon: FileCheck,
@@ -36,7 +36,7 @@ export function MecSection() {
             </div>
 
             <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-              Seu certificado técnico com{" "}
+              Seu diploma técnico com{" "}
               <span className="text-primary">validade nacional</span> — SISTEC/MEC
             </h2>
 
@@ -98,7 +98,7 @@ export function MecSection() {
                 {/* Body */}
                 <div className="text-center">
                   <p className="text-lg font-bold text-primary sm:text-xl">
-                    Certificado de Curso Técnico
+                    Diploma de Curso Técnico
                   </p>
                   <p className="mt-1 text-xs text-muted-foreground italic">
                     Educação Profissional Técnica de Nível Médio

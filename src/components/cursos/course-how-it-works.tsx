@@ -14,8 +14,8 @@ const steps = [
   },
   {
     icon: Award,
-    title: "Receba o Certificado",
-    description: "Conclua o curso e receba seu certificado registrado no SISTEC/MEC, com validade nacional.",
+    title: "Receba o Diploma",
+    description: "Conclua o curso e receba seu diploma registrado no SISTEC/MEC, com validade nacional.",
   },
 ];
 

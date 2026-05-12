@@ -54,7 +54,7 @@ export default function PoliticaDePrivacidadePage() {
               <ul className="list-disc pl-5">
                 <li>Efetivação da matrícula e prestação dos serviços educacionais</li>
                 <li>Comunicação institucional e acadêmica</li>
-                <li>Emissão de certificados</li>
+                <li>Emissão de diplomas</li>
                 <li>Cumprimento de obrigações legais e regulatórias</li>
                 <li>Melhoria contínua dos nossos serviços</li>
               </ul>

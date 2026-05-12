@@ -59,14 +59,27 @@ export function VslHero() {
               </Button>
             </div>
 
-            {/* Micro-stat bar */}
-            <div className="mt-10 flex items-center justify-center lg:justify-start animate-fade-in [animation-delay:600ms]">
+            {/* Stat bars */}
+            <div className="mt-10 flex flex-col items-center gap-3 lg:items-start animate-fade-in [animation-delay:600ms]">
               <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 rounded-full bg-white/[0.04] border border-white/[0.06] px-8 py-3 backdrop-blur-sm">
                 <Stat value="2.500+" label="profissionais formados" />
                 <div className="h-4 w-px bg-white/10 hidden sm:block" />
                 <Stat value="60+" label="cursos técnicos" />
                 <div className="h-4 w-px bg-white/10 hidden sm:block" />
                 <Stat value="94%" label="empregabilidade" />
+              </div>
+
+              {/* Destaque de preço */}
+              <div className="inline-flex items-center gap-3 rounded-full border border-accent/40 bg-accent/15 px-6 py-3 shadow-lg shadow-accent/10 backdrop-blur-sm">
+                <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-accent/90">
+                  A partir de
+                </span>
+                <span className="text-xl font-extrabold leading-none tracking-tight text-accent sm:text-2xl">
+                  12x R$ 89,00
+                </span>
+                <span className="text-xs font-medium text-white/70">
+                  no cartão de crédito
+                </span>
               </div>
             </div>
           </div>

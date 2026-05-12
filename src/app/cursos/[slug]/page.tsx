@@ -405,7 +405,7 @@ export default async function CourseDetailPage({ params }: PageProps) {
                 <div className="mt-6 space-y-2 text-sm text-muted-foreground">
                   <div className="flex items-center gap-2">
                     <CheckCircle2 className="h-4 w-4 text-success" />
-                    Certificado gratuito
+                    Diploma gratuito
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle2 className="h-4 w-4 text-success" />

@@ -12,7 +12,7 @@ export const revalidate = 86400; // ISR: revalidar a cada 24h
 export const metadata: Metadata = {
   title: "Cursos Técnicos EAD",
   description:
-    "Explore mais de 60 cursos técnicos EAD com certificado reconhecido pelo MEC. Encontre o curso ideal para sua carreira profissional.",
+    "Explore mais de 60 cursos técnicos EAD com diploma reconhecido pelo MEC. Encontre o curso ideal para sua carreira profissional.",
 };
 
 async function CourseListLoader() {

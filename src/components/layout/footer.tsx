@@ -90,7 +90,6 @@ export function Footer() {
             </ul>
             <div className="mt-4 text-xs text-primary-foreground/50">
               <p>{INSTITUTION.businessHours.weekdays}</p>
-              <p>{INSTITUTION.businessHours.friday}</p>
             </div>
           </div>
 

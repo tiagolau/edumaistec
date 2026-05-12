@@ -1,5 +1,3 @@
-// TODO(EdumaisTec): substituir os placeholders "A DEFINIR" pelos dados oficiais
-// (endereço da sede, WhatsApp comercial, e-mail, redes sociais e domínio final).
 export const INSTITUTION = {
   name: "EdumaisTec",
   legalName: "EdumaisTec",
@@ -7,23 +5,22 @@ export const INSTITUTION = {
   cnpj: "63.111.623/0001-51",
   mecPortaria: "Cadastrado no SISTEC/MEC",
   address: {
-    street: "A DEFINIR",
-    city: "A DEFINIR",
+    street: "R. Rio Doce, 50 - Professores",
+    city: "Coronel Fabriciano",
     state: "MG",
-    zip: "00000-000",
-    full: "A DEFINIR",
+    zip: "35170-112",
+    full: "R. Rio Doce, 50 - Professores, Coronel Fabriciano - MG, 35170-112",
   },
   contacts: {
-    whatsapp: "(00) 00000-0000",
-    whatsappLink: "https://wa.me/550000000000",
-    email: "contato@edumaistec.com.br",
+    whatsapp: "(31) 97327-6889",
+    whatsappLink: "https://wa.me/5531973276889",
+    email: "edumaistecoficial@gmail.com",
   },
   businessHours: {
     weekdays: "Segunda a Sexta: 8h às 18h",
-    friday: "Sábado: 8h às 12h",
   },
   social: {
-    facebook: "https://facebook.com/edumaistec",
+    facebook: "https://www.facebook.com/profile.php?id=61582721967086",
     instagram: "https://instagram.com/edumaistec",
   },
   domain: "www.edumaistec.com.br",

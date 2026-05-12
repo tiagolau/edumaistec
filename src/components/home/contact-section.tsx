@@ -1,4 +1,4 @@
-import { MessageCircle, Mail, Phone, Clock } from "lucide-react";
+import { MessageCircle, Mail, Clock } from "lucide-react";
 import { INSTITUTION } from "@/lib/constants";
 import { SectionTitle } from "@/components/shared/section-title";
 import { ContactChannelCard } from "@/components/shared/contact-channel-card";
@@ -21,14 +21,6 @@ const channels = [
     iconColor: "text-primary",
     iconBgColor: "bg-primary/10",
   },
-  {
-    icon: Phone,
-    title: "Telefone",
-    value: INSTITUTION.contacts.whatsapp,
-    href: `tel:+55${INSTITUTION.contacts.whatsapp.replace(/\D/g, "")}`,
-    iconColor: "text-accent",
-    iconBgColor: "bg-accent/10",
-  },
 ];
 
 export function ContactSection() {
@@ -42,7 +34,7 @@ export function ContactSection() {
           />
         </AnimatedSection>
 
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-3 max-w-3xl mx-auto">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 max-w-2xl mx-auto">
           {channels.map((channel, i) => (
             <AnimatedSection key={i} animation="fade-up" delay={i * 100}>
               <ContactChannelCard {...channel} />
@@ -54,10 +46,7 @@ export function ContactSection() {
         <AnimatedSection animation="fade-in" delay={500}>
           <div className="mt-10 flex items-center justify-center gap-2 text-sm text-muted-foreground">
             <Clock className="h-4 w-4" />
-            <span>
-              {INSTITUTION.businessHours.weekdays} ·{" "}
-              {INSTITUTION.businessHours.friday}
-            </span>
+            <span>{INSTITUTION.businessHours.weekdays}</span>
           </div>
         </AnimatedSection>
       </div>

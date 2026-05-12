@@ -1,6 +1,6 @@
 import {
+  MessageCircle,
   FileCheck,
-  MonitorPlay,
   ClipboardCheck,
   Award,
 } from "lucide-react";
@@ -9,18 +9,18 @@ import { SectionTitle } from "@/components/shared/section-title";
 
 const steps = [
   {
-    icon: FileCheck,
+    icon: MessageCircle,
     number: "01",
+    title: "Converse com um atendente",
+    description:
+      "Fale com nossa equipe pelo WhatsApp para entender o processo, tirar dúvidas e iniciar sua jornada rumo ao diploma.",
+  },
+  {
+    icon: FileCheck,
+    number: "02",
     title: "Comprove sua experiência",
     description:
       "Tenha pelo menos 1 ano de experiência profissional comprovada na área do curso, com Ensino Médio completo.",
-  },
-  {
-    icon: MonitorPlay,
-    number: "02",
-    title: "Estude no seu ritmo",
-    description:
-      "Acesse a plataforma EAD, assista videoaulas e estude os materiais complementares para reforçar seus conhecimentos.",
   },
   {
     icon: ClipboardCheck,
@@ -34,7 +34,7 @@ const steps = [
     number: "04",
     title: "Receba seu diploma",
     description:
-      "Certificado idêntico ao de um curso regular, registrado no SISTEC/MEC com código de autenticação para verificação nacional.",
+      "Registrado no SISTEC/MEC com código de autenticação para verificação nacional.",
   },
 ];
 

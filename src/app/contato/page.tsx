@@ -78,9 +78,6 @@ export default function ContatoPage() {
                     <p className="text-sm text-muted-foreground">
                       {INSTITUTION.businessHours.weekdays}
                     </p>
-                    <p className="text-sm text-muted-foreground">
-                      {INSTITUTION.businessHours.friday}
-                    </p>
                   </div>
                 </AnimatedSection>
               </div>
@@ -101,24 +98,20 @@ export default function ContatoPage() {
               </div>
             </div>
 
-            {/* TODO(EdumaisTec): substituir o iframe abaixo pelo embed do Google Maps
-                gerado a partir do endereço oficial da sede assim que ele estiver definido. */}
-            {INSTITUTION.address.full !== "A DEFINIR" && (
-              <AnimatedSection animation="fade-up" delay={200}>
-                <div className="mt-12 overflow-hidden rounded-2xl border border-border">
-                  <iframe
-                    title={`Localização ${INSTITUTION.name}`}
-                    src={`https://maps.google.com/maps?q=${encodeURIComponent(
-                      INSTITUTION.address.full,
-                    )}&output=embed`}
-                    className="h-64 w-full sm:h-80"
-                    allowFullScreen
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                  />
-                </div>
-              </AnimatedSection>
-            )}
+            <AnimatedSection animation="fade-up" delay={200}>
+              <div className="mt-12 overflow-hidden rounded-2xl border border-border">
+                <iframe
+                  title={`Localização ${INSTITUTION.name}`}
+                  src={`https://maps.google.com/maps?q=${encodeURIComponent(
+                    INSTITUTION.address.full,
+                  )}&output=embed`}
+                  className="h-64 w-full sm:h-80"
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
+              </div>
+            </AnimatedSection>
           </div>
         </section>
       </main>

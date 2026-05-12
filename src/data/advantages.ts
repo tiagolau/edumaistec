@@ -6,21 +6,21 @@ export const advantages: Advantage[] = [
     icon: "Clock",
     title: "Flexibilidade Total",
     description:
-      "Estude 100% online, no seu ritmo e de qualquer lugar. Acesse as aulas quando e onde quiser, sem precisar se deslocar.",
+      "100% online, no seu ritmo e de qualquer lugar. Acesse as aulas quando e onde quiser, sem precisar se deslocar.",
   },
   {
     id: "2",
     icon: "Wallet",
     title: "Mensalidade Acessível",
     description:
-      "Investimento que cabe no seu bolso: mensalidades a partir de R$ 83,34 com parcelamento em até 12x sem juros no cartão.",
+      "Investimento que cabe no seu bolso: mensalidades a partir de R$ 89,00 com parcelamento em até 12x sem juros no cartão.",
   },
   {
     id: "3",
     icon: "Award",
-    title: "Certificado SISTEC/MEC",
+    title: "Diploma SISTEC/MEC",
     description:
-      "Certificado válido em todo o Brasil, cadastrado no SISTEC/MEC. Reconhecido para concursos públicos, progressão de carreira e mercado de trabalho.",
+      "Diploma válido em todo o Brasil, cadastrado no SISTEC/MEC. Reconhecido para concursos públicos, progressão de carreira e mercado de trabalho.",
   },
   {
     id: "4",
