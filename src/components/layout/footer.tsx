@@ -11,15 +11,17 @@ export function Footer() {
           {/* Institucional */}
           <div>
             <div className="mb-4">
-              <Image
-                src="/logo-dark.png"
-                alt={INSTITUTION.name}
-                width={180}
-                height={50}
-                sizes="180px"
-                className="h-10 w-auto brightness-0 invert"
-                loading="lazy"
-              />
+              <span className="inline-flex items-center justify-center rounded-xl bg-white p-2 shadow-sm">
+                <Image
+                  src="/logo-dark.png"
+                  alt={INSTITUTION.name}
+                  width={180}
+                  height={180}
+                  sizes="64px"
+                  className="h-14 w-14 object-contain"
+                  loading="lazy"
+                />
+              </span>
             </div>
             <p className="text-sm leading-relaxed text-primary-foreground/80">
               {INSTITUTION.mecPortaria}. Certificação técnica por competência:
