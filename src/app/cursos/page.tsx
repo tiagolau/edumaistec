@@ -7,7 +7,7 @@ import { CourseList } from "@/components/cursos/course-list";
 import { getCourses, getAreas } from "@/lib/services/courses";
 import type { Course, CourseArea } from "@/types/course";
 
-export const revalidate = 86400; // ISR: revalidar a cada 24h
+export const dynamic = "force-dynamic"; // rota redirecionada via next.config.ts — evita fetch no build
 
 export const metadata: Metadata = {
   title: "Cursos Técnicos EAD",

@@ -25,6 +25,7 @@ import { getCourseBySlug } from "@/lib/services/courses";
 import { INSTITUTION } from "@/lib/constants";
 import { formatCurrency } from "@/lib/pricing";
 
+export const dynamic = "force-dynamic"; // rota redirecionada via next.config.ts — evita fetch no build
 export const dynamicParams = true;
 
 interface PageProps {
