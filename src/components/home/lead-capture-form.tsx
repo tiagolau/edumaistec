@@ -145,14 +145,14 @@ export function LeadCaptureForm() {
     <form
       id="form-lead"
       onSubmit={handleSubmit(onSubmit)}
-      className="relative rounded-3xl border border-white/10 bg-white/[0.05] p-6 backdrop-blur-md sm:p-7"
+      className="relative rounded-2xl border border-white/10 bg-white/[0.05] p-5 backdrop-blur-md sm:rounded-3xl sm:p-7"
       noValidate
     >
-      <div className="mb-5 text-center">
-        <h3 className="text-xl font-extrabold text-white sm:text-2xl">
+      <div className="mb-4 text-center sm:mb-5">
+        <h3 className="text-lg font-extrabold text-white sm:text-2xl">
           Solicite sua análise gratuita
         </h3>
-        <p className="mt-1.5 text-sm text-white/60">
+        <p className="mt-1 text-xs text-white/60 sm:mt-1.5 sm:text-sm">
           Em até 24h um consultor avalia se você se qualifica para a
           certificação.
         </p>

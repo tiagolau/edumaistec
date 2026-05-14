@@ -12,13 +12,13 @@ export function VslHero() {
         <div className="absolute inset-0 opacity-[0.02] bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJhIiB4PSIwIiB5PSIwIj48ZmVUdXJidWxlbmNlIHR5cGU9ImZyYWN0YWxOb2lzZSIgYmFzZUZyZXF1ZW5jeT0iLjc1IiBzdGl0Y2hUaWxlcz0ic3RpdGNoIi8+PC9maWx0ZXI+PHJlY3Qgd2lkdGg9IjMwMCIgaGVpZ2h0PSIzMDAiIGZpbHRlcj0idXJsKCNhKSIgb3BhY2l0eT0iMSIvPjwvc3ZnPg==')]" />
       </div>
 
-      <div className="relative mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
-        <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-[1fr_460px] lg:gap-14">
-          {/* Left side — text content */}
-          <div className="text-center lg:text-left lg:pt-4">
+      <div className="relative mx-auto max-w-6xl px-4 py-8 sm:px-6 sm:py-16 lg:px-8 lg:py-24">
+        <div className="grid grid-cols-1 gap-6 sm:gap-10 lg:grid-cols-[1fr_460px] lg:items-start lg:gap-14">
+          {/* Header — badge + headline + supporting copy */}
+          <div className="order-1 text-center lg:order-none lg:col-start-1 lg:row-start-1 lg:pt-4 lg:text-left">
             {/* Badge */}
-            <div className="mb-8 flex justify-center lg:justify-start animate-fade-in">
-              <div className="inline-flex items-center gap-2 rounded-full bg-white/[0.08] border border-white/[0.08] px-5 py-2 text-sm font-medium text-white/70 backdrop-blur-sm">
+            <div className="mb-4 flex justify-center sm:mb-6 lg:mb-8 lg:justify-start animate-fade-in">
+              <div className="inline-flex items-center gap-2 rounded-full bg-white/[0.08] border border-white/[0.08] px-4 py-1.5 text-xs font-medium text-white/70 backdrop-blur-sm sm:px-5 sm:py-2 sm:text-sm">
                 <ShieldCheck className="h-4 w-4 text-accent/80" />
                 Cadastrado no SISTEC/MEC — Validade Nacional
               </div>
@@ -26,7 +26,7 @@ export function VslHero() {
 
             {/* Headline */}
             <div className="animate-fade-up">
-              <h1 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl xl:text-[3.5rem] xl:leading-[1.08]">
+              <h1 className="text-[1.65rem] font-extrabold leading-[1.1] tracking-tight text-white sm:text-4xl lg:text-5xl xl:text-[3.5rem] xl:leading-[1.08]">
                 Você trabalha na área
                 <br className="hidden sm:block" />
                 <span className="text-white/60"> mas </span>
@@ -36,15 +36,29 @@ export function VslHero() {
                 </span>
                 <span className="text-white/60">?</span>
               </h1>
-              <p className="mt-5 max-w-xl text-base text-white/55 leading-relaxed sm:text-lg mx-auto lg:mx-0">
+              <p className="mt-3 max-w-xl text-sm text-white/55 leading-relaxed sm:mt-5 sm:text-lg mx-auto lg:mx-0 hidden sm:block">
                 Descubra como profissionais com experiência estão obtendo seu
                 diploma técnico — 100% online, com validade nacional — sem
                 precisar cursar anos de aulas sobre o que já dominam na prática.
               </p>
             </div>
+          </div>
+
+          {/* Form — sobe para a primeira dobra no mobile */}
+          <div className="order-2 animate-fade-up [animation-delay:200ms] lg:order-none lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:sticky lg:top-20">
+            <LeadCaptureForm />
+          </div>
+
+          {/* Tail — parágrafo curto (mobile) + stats */}
+          <div className="order-3 lg:order-none lg:col-start-1 lg:row-start-2">
+            {/* Parágrafo descritivo — só mobile (no desktop ele já apareceu acima do form) */}
+            <p className="mx-auto max-w-xl text-center text-sm leading-relaxed text-white/55 sm:hidden">
+              Descubra como profissionais com experiência estão obtendo seu
+              diploma técnico — 100% online, com validade nacional.
+            </p>
 
             {/* Stat bars */}
-            <div className="mt-10 flex flex-col items-center gap-3 lg:items-start animate-fade-in [animation-delay:400ms]">
+            <div className="mt-6 flex flex-col items-center gap-3 sm:mt-10 lg:items-start animate-fade-in [animation-delay:400ms]">
               <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 rounded-full bg-white/[0.04] border border-white/[0.06] px-8 py-3 backdrop-blur-sm">
                 <Stat value="2.500+" label="profissionais formados" />
                 <div className="h-4 w-px bg-white/10 hidden sm:block" />
@@ -66,11 +80,6 @@ export function VslHero() {
                 </span>
               </div>
             </div>
-          </div>
-
-          {/* Right side — lead capture form */}
-          <div className="animate-fade-up [animation-delay:200ms] lg:sticky lg:top-20">
-            <LeadCaptureForm />
           </div>
         </div>
       </div>
