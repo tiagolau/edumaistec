@@ -6,10 +6,8 @@ import { VslHero } from "@/components/home/vsl-hero";
 import { CompetencyModel } from "@/components/home/competency-model";
 import { Advantages } from "@/components/home/advantages";
 import { Testimonials } from "@/components/home/testimonials";
-import { CategoriesGrid } from "@/components/home/categories-grid";
 import { MecSection } from "@/components/shared/mec-section";
 import { FaqSection } from "@/components/home/faq-section";
-import { CtaBanner } from "@/components/home/cta-banner";
 import { ContactSection } from "@/components/home/contact-section";
 
 export default function HomePage() {
@@ -17,7 +15,7 @@ export default function HomePage() {
     <>
       <Header />
       <main>
-        {/* 1. Hook — VSL hero with video */}
+        {/* 1. Hook — VSL hero with video + lead form */}
         <VslHero />
         {/* 2. Educate — how competency certification works */}
         <CompetencyModel />
@@ -25,15 +23,11 @@ export default function HomePage() {
         <Advantages />
         {/* 4. Trust — social proof */}
         <Testimonials />
-        {/* 5. Explore — browse courses by area */}
-        <CategoriesGrid />
-        {/* 6. Authority — SISTEC/MEC section */}
+        {/* 5. Authority — SISTEC/MEC section */}
         <MecSection />
-        {/* 7. Objection handling */}
+        {/* 6. Objection handling */}
         <FaqSection />
-        {/* 8. Final CTA */}
-        <CtaBanner />
-        {/* 9. Support channels */}
+        {/* 7. Support channels */}
         <ContactSection />
       </main>
       <Footer />

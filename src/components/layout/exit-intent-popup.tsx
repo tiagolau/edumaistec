@@ -164,11 +164,11 @@ export function ExitIntentPopup() {
 
               <div className="mt-6 flex flex-col items-center gap-3">
                 <Link
-                  href="/cursos"
+                  href="/#form-lead"
                   onClick={() => setShow(false)}
                   className="inline-flex items-center gap-2 rounded-full bg-accent px-8 py-3.5 text-sm font-bold text-white shadow-lg transition-all hover:bg-accent-dark hover:scale-105"
                 >
-                  Ver cursos disponíveis
+                  Solicitar análise gratuita
                   <ArrowRight className="h-4 w-4" />
                 </Link>
               </div>
@@ -191,14 +191,16 @@ export function ExitIntentPopup() {
               </p>
 
               <div className="mt-6 flex flex-col items-center gap-3">
-                <Link
-                  href="/cursos"
+                <a
+                  href={INSTITUTION.contacts.whatsappLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   onClick={() => setShow(false)}
                   className="inline-flex items-center gap-2 rounded-full bg-accent px-8 py-3.5 text-sm font-bold text-white shadow-lg transition-all hover:bg-accent-dark hover:scale-105"
                 >
-                  Ver cursos disponíveis
+                  Falar com um consultor
                   <ArrowRight className="h-4 w-4" />
-                </Link>
+                </a>
                 <button
                   onClick={() => setShow(false)}
                   className="text-sm text-white/60 hover:text-white/80 transition-colors"

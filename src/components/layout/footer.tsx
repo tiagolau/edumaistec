@@ -7,7 +7,7 @@ export function Footer() {
   return (
     <footer className="bg-primary-dark text-primary-foreground">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {/* Institucional */}
           <div>
             <div className="mb-4">
@@ -30,45 +30,6 @@ export function Footer() {
             <p className="mt-3 text-xs text-primary-foreground/60">
               CNPJ: {INSTITUTION.cnpj}
             </p>
-          </div>
-
-          {/* Cursos */}
-          <div>
-            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-primary-foreground/90">
-              Cursos
-            </h3>
-            <ul className="space-y-2 text-sm text-primary-foreground/70">
-              <li>
-                <Link href="/cursos?categoria=saude" className="transition-colors hover:text-accent">
-                  Saúde
-                </Link>
-              </li>
-              <li>
-                <Link href="/cursos?categoria=infraestrutura" className="transition-colors hover:text-accent">
-                  Infraestrutura
-                </Link>
-              </li>
-              <li>
-                <Link href="/cursos?categoria=tecnologia" className="transition-colors hover:text-accent">
-                  Tecnologia
-                </Link>
-              </li>
-              <li>
-                <Link href="/cursos?categoria=administracao" className="transition-colors hover:text-accent">
-                  Administração
-                </Link>
-              </li>
-              <li>
-                <Link href="/cursos?categoria=seguranca-do-trabalho" className="transition-colors hover:text-accent">
-                  Segurança do Trabalho
-                </Link>
-              </li>
-              <li>
-                <Link href="/cursos" className="font-medium text-accent transition-colors hover:text-accent/80">
-                  Ver todos os cursos →
-                </Link>
-              </li>
-            </ul>
           </div>
 
           {/* Atendimento */}

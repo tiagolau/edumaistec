@@ -60,9 +60,6 @@ export function Header() {
             >
               Já sou aluno
             </Button>
-            <Button size="sm" className="bg-accent text-accent-foreground hover:bg-accent-dark" asChild>
-              <Link href="/cursos">Matricule-se</Link>
-            </Button>
           </div>
 
           {/* Mobile Menu */}
@@ -96,11 +93,6 @@ export function Header() {
                   }}
                 >
                   Já sou aluno
-                </Button>
-                <Button className="w-full bg-accent text-accent-foreground hover:bg-accent-dark mt-2" asChild>
-                  <Link href="/cursos" onClick={() => setOpen(false)}>
-                    Matricule-se
-                  </Link>
                 </Button>
               </nav>
             </SheetContent>

@@ -28,6 +28,5 @@ export const INSTITUTION = {
 
 export const NAV_LINKS = [
   { href: "/certificacao-por-competencia", label: "Como Funciona" },
-  { href: "/cursos", label: "Cursos" },
   { href: "/contato", label: "Contato" },
 ] as const;

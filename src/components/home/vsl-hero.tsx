@@ -1,6 +1,4 @@
-import Link from "next/link";
-import { ArrowRight, ShieldCheck } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { ShieldCheck } from "lucide-react";
 import { LeadCaptureForm } from "./lead-capture-form";
 
 export function VslHero() {
@@ -45,22 +43,8 @@ export function VslHero() {
               </p>
             </div>
 
-            {/* CTAs */}
-            <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center lg:justify-start animate-fade-up [animation-delay:400ms]">
-              <Button
-                size="lg"
-                className="bg-accent text-accent-foreground hover:bg-accent-dark px-10 text-base h-13 shadow-lg shadow-accent/20"
-                asChild
-              >
-                <Link href="/cursos">
-                  Ver cursos disponíveis
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
-            </div>
-
             {/* Stat bars */}
-            <div className="mt-10 flex flex-col items-center gap-3 lg:items-start animate-fade-in [animation-delay:600ms]">
+            <div className="mt-10 flex flex-col items-center gap-3 lg:items-start animate-fade-in [animation-delay:400ms]">
               <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 rounded-full bg-white/[0.04] border border-white/[0.06] px-8 py-3 backdrop-blur-sm">
                 <Stat value="2.500+" label="profissionais formados" />
                 <div className="h-4 w-px bg-white/10 hidden sm:block" />
